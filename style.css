@@ -1,0 +1,914 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@400;500;600;700&family=Permanent+Marker&family=DM+Mono:wght@400;500&family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Anton&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  margin: 0;
+  background: #d8c9c4;
+  color: #292722;
+  font-family: 'Special Elite', serif;
+}
+
+.cover,
+.spread {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 600px;
+  scroll-snap-align: start;
+}
+
+/* COVER: MESSY DESK */
+
+.cover {
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  background: #cfc1ba;
+}
+
+.cover-paper {
+  position: relative;
+  width: min(750px, 96vw);
+  height: 96%;
+  padding: 4vh 7%;
+  overflow: hidden;
+  background:
+    radial-gradient(#c6b8a7 0.7px, transparent 0.8px),
+    #e9e0d2;
+  background-size: 5px 5px;
+  box-shadow: 5px 8px 0 #85756d, 12px 14px 25px #58494338;
+  transform: rotate(-1deg);
+}
+
+.cover-tape {
+  position: absolute;
+  top: 4%;
+  right: 7%;
+  padding: 10px 15px;
+  background: #d6c1d0;
+  font: 10px 'DM Mono', monospace;
+  transform: rotate(8deg);
+}
+
+.tiny,
+.typed {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.cover-title {
+  position: relative;
+  z-index: 2;
+  margin: 2vh 0 0;
+  color: #22231f;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(60px, 11vw, 112px);
+  line-height: .82;
+  letter-spacing: -3px;
+  transform: rotate(-3deg);
+}
+
+.cover-title span {
+  color: #b94d37;
+  margin-left: 15%;
+}
+
+.cover-hand {
+  position: relative;
+  z-index: 3;
+  margin: 12px 0;
+  font: 700 clamp(20px, 3vw, 30px) 'Caveat', cursive;
+  transform: rotate(3deg);
+}
+
+.cover-pictures {
+  position: relative;
+  height: 36%;
+  margin: 1vh auto;
+}
+
+.cover-img {
+  position: absolute;
+  width: 46%;
+  height: 100%;
+  padding: 8px 8px 24px;
+  background: #faf6e9;
+  box-shadow: 3px 6px 10px #51453c44;
+  object-fit: cover;
+}
+
+.cimg1 {
+  left: 2%;
+  transform: rotate(-8deg);
+}
+
+.cimg2 {
+  right: 2%;
+  transform: rotate(5deg);
+}
+
+.cover-star {
+  position: absolute;
+  z-index: 3;
+  top: -20px;
+  left: 46%;
+  color: #ba4c37;
+  font-size: 50px;
+  transform: rotate(14deg);
+}
+
+.cover-note {
+  position: absolute;
+  z-index: 4;
+  padding: 7px;
+  background: #f0d46c;
+  font: 700 17px 'Caveat', cursive;
+}
+
+.note-a {
+  top: 7%;
+  left: -3%;
+  transform: rotate(-12deg);
+}
+
+.note-b {
+  right: -2%;
+  bottom: 3%;
+  background: #b7c8b1;
+  transform: rotate(8deg);
+}
+
+.cover-bottom {
+  margin-top: 1vh;
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: 1px;
+}
+
+.open-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 16px;
+  background: #b94d37;
+  color: #fff5df;
+  font: 11px 'DM Mono', monospace;
+  text-decoration: none;
+  transform: rotate(-2deg);
+}
+
+/* OPEN SPREAD */
+
+.spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background: #cbbdb4;
+}
+
+.paper {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 3vh 5%;
+  background-color: #f3eddf;
+  background-image:
+    radial-gradient(#c8bcaa 0.55px, transparent .7px),
+    linear-gradient(90deg, transparent 35px, #d9a99b 36px, transparent 38px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 32px, #cbd4d1 33px, transparent 34px);
+  background-size: 5px 5px, auto, auto;
+  box-shadow: inset -6px 0 12px #76665a13;
+}
+
+.blank {
+  padding: 0;
+  background-color: #f3eddf;
+  background-image:
+    linear-gradient(90deg, transparent 35px, #d9a99b 36px, transparent 38px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 32px, #cbd4d1 33px, transparent 34px);
+  box-shadow: inset 6px 0 12px #76665a13;
+}
+
+.next {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #665e53;
+  border-radius: 50%;
+  background: #f3eddf;
+  color: #292722;
+  font: 26px 'DM Mono', monospace;
+  text-decoration: none;
+  transform: rotate(-8deg);
+}
+
+.next:hover {
+  background: #e8d56e;
+}
+
+/* SCRAPS AND HANDWRITING */
+
+.photo {
+  position: absolute;
+  padding: 8px 8px 22px;
+  background: #fbf6e9;
+  box-shadow: 3px 5px 12px #53453c40;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tape {
+  position: absolute;
+  z-index: 5;
+  width: 100px;
+  height: 25px;
+  opacity: .85;
+}
+
+.tape-blue {
+  top: 10%;
+  left: 24%;
+  background: #91b9c4;
+  transform: rotate(-14deg);
+}
+
+.tape-orange {
+  top: 12%;
+  right: 15%;
+  background: #dc946c;
+  transform: rotate(12deg);
+}
+
+.hand {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+}
+
+.marker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.scribble {
+  position: absolute;
+  z-index: 3;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.page-no {
+  position: absolute;
+  bottom: 8px;
+  left: 13px;
+  font: 9px 'DM Mono', monospace;
+  opacity: .6;
+}
+
+/* SEOUL — INDUSTRIAL, BUSY */
+
+.seoul {
+  background-color: #e8e3d6;
+  background-image:
+    radial-gradient(#a99d8b .7px, transparent .8px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 32px, #c3cbc7 33px, transparent 34px);
+  background-size: 5px 5px, auto;
+}
+
+.seoul-title {
+  position: relative;
+  z-index: 2;
+  margin: 3vh 0 0 3%;
+  font: clamp(50px, 7vw, 80px)/.78 'Anton', sans-serif;
+  letter-spacing: -2px;
+  transform: rotate(-4deg);
+}
+
+.seoul-title i {
+  margin-left: 20%;
+  color: #b94d37;
+  font: italic 600 clamp(32px, 5vw, 55px) 'Caveat', cursive;
+}
+
+.s1 {
+  top: 4%;
+  right: 6%;
+  color: #b94d37;
+  font-size: 16px;
+  transform: rotate(10deg);
+}
+
+.s2 {
+  top: 24%;
+  right: 5%;
+  color: #3e514c;
+  font: 700 18px 'Caveat', cursive;
+  transform: rotate(8deg);
+}
+
+.station-photo {
+  top: 22%;
+  left: 7%;
+  width: 60%;
+  height: 28%;
+  transform: rotate(-5deg);
+}
+
+.photo-label {
+  position: absolute;
+  right: -30px;
+  bottom: 20px;
+  padding: 6px;
+  background: #e9d36c;
+  font: 11px 'DM Mono', monospace;
+  transform: rotate(7deg);
+}
+
+.scrap-ticket {
+  position: absolute;
+  z-index: 3;
+  top: 45%;
+  right: 4%;
+  width: 39%;
+  padding: 12px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px dashed #746b5b;
+  background: #d7d2c2;
+  transform: rotate(7deg);
+}
+
+.scrap-ticket strong {
+  color: #b94d37;
+  font: 700 clamp(15px, 2vw, 23px) 'DM Mono', monospace;
+  overflow-wrap: anywhere;
+}
+
+.h-seoul {
+  position: absolute;
+  top: 52%;
+  left: 8%;
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: .95;
+  transform: rotate(-7deg);
+}
+
+.m-seoul {
+  position: absolute;
+  top: 66%;
+  right: 6%;
+  color: #b94d37;
+  font-size: clamp(20px, 3vw, 30px);
+  transform: rotate(8deg);
+}
+
+.station-caption {
+  position: absolute;
+  top: 72%;
+  left: 10%;
+  max-width: 55%;
+  line-height: 1.6;
+}
+
+.sound-sticker {
+  position: absolute;
+  bottom: 9%;
+  left: 7%;
+  width: 59%;
+  padding: 8px;
+  border: 1px solid #787b70;
+  background: #f3eddf;
+  transform: rotate(-2deg);
+}
+
+.sound-label {
+  display: block;
+  margin-bottom: 4px;
+  font: 10px 'DM Mono', monospace;
+}
+
+.sound-sticker audio,
+.night-scrap audio,
+.palace-sound audio {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+.sound-sticker .tiny {
+  display: block;
+  margin-top: 4px;
+  font-size: 7px;
+}
+
+.mini-photo {
+  position: absolute;
+  right: 7%;
+  bottom: 8%;
+  width: 24%;
+  height: 16%;
+  padding: 5px;
+  background: #fff9e8;
+  transform: rotate(8deg);
+}
+
+.mini-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-word {
+  position: absolute;
+  right: 8%;
+  top: 7%;
+  color: #b94d37;
+  font: 700 23px 'Permanent Marker', cursive;
+  transform: rotate(12deg);
+}
+
+/* JEJU — SUN-BLEACHED, ORGANIC */
+
+.jeju {
+  background-color: #e9e6d4;
+  background-image:
+    radial-gradient(#b9b498 .8px, transparent 1px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 32px, #c4d3c9 33px, transparent 34px);
+  background-size: 6px 6px, auto;
+}
+
+.jeju-label {
+  position: absolute;
+  top: 4%;
+  left: 7%;
+  font: 9px 'DM Mono', monospace;
+  letter-spacing: 1px;
+  transform: rotate(-2deg);
+}
+
+.jeju-title {
+  position: absolute;
+  top: 7%;
+  left: 5%;
+  margin: 0;
+  color: #386c58;
+  font: clamp(60px, 10vw, 100px)/.9 'Permanent Marker', cursive;
+  transform: rotate(-5deg);
+}
+
+.jeju-hand {
+  position: absolute;
+  z-index: 3;
+  top: 17%;
+  right: 4%;
+  max-width: 48%;
+  font: 700 clamp(16px, 2.3vw, 25px) 'Caveat', cursive;
+  transform: rotate(6deg);
+}
+
+.jeju-photo {
+  top: 23%;
+  left: 8%;
+  width: 70%;
+  height: 29%;
+  transform: rotate(3deg);
+}
+
+.jeju-photo-small {
+  z-index: 3;
+  top: 42%;
+  right: 5%;
+  width: 34%;
+  height: 20%;
+  transform: rotate(-8deg);
+}
+
+.big-star {
+  position: absolute;
+  top: 26%;
+  right: 7%;
+  z-index: 4;
+  color: #e2a34b;
+  font-size: 45px;
+}
+
+.jeju-stamp {
+  position: absolute;
+  top: 53%;
+  left: 5%;
+  z-index: 4;
+  width: 85px;
+  height: 85px;
+  display: grid;
+  place-items: center;
+  border: 3px double #47755d;
+  border-radius: 50%;
+  color: #47755d;
+  font: 700 13px 'DM Mono', monospace;
+  text-align: center;
+  transform: rotate(-13deg);
+}
+
+.jeju-note {
+  position: absolute;
+  z-index: 4;
+  margin: 0;
+  padding: 6px 10px;
+  background: #ead36f;
+  font: 700 clamp(16px, 2.4vw, 24px) 'Caveat', cursive;
+}
+
+.note-1 {
+  top: 57%;
+  right: 6%;
+  transform: rotate(5deg);
+}
+
+.note-2 {
+  top: 65%;
+  left: 15%;
+  color: #386c58;
+  background: transparent;
+  font: 20px 'Permanent Marker', cursive;
+  transform: rotate(-8deg);
+}
+
+.torn-note {
+  position: absolute;
+  left: 12%;
+  bottom: 13%;
+  width: 77%;
+  padding: 12px 15px;
+  background: #f8f0d9;
+  clip-path: polygon(0 3%, 12% 0, 25% 3%, 42% 0, 58% 3%, 75% 0, 100% 3%, 98% 100%, 75% 97%, 50% 100%, 27% 97%, 0 100%);
+  transform: rotate(2deg);
+}
+
+.torn-note p {
+  margin: 8px 0;
+  font: 700 clamp(14px, 1.8vw, 19px) 'Caveat', cursive;
+  line-height: 1.1;
+}
+
+.sea-sound {
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
+  width: 46%;
+  padding: 7px;
+  background: #d0ded1;
+  transform: rotate(-3deg);
+}
+
+.sea-sound .sound-label {
+  font-size: 8px;
+}
+
+.sea-sound .tiny {
+  font-size: 7px;
+}
+
+.jeju-bottom {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  color: #386c58;
+  font: 9px 'DM Mono', monospace;
+  transform: rotate(-4deg);
+}
+
+/* NAMSAN — DARK PHOTOCOPY / NIGHT NOTES */
+
+.namsan {
+  color: #f1e9d9;
+  background-color: #252c36;
+  background-image:
+    radial-gradient(#59606a .7px, transparent .8px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 32px, #47505b 33px, transparent 34px);
+  background-size: 5px 5px, auto;
+}
+
+.night-tape {
+  position: absolute;
+  top: 5%;
+  right: 7%;
+  padding: 8px 13px;
+  background: #e1c96d;
+  color: #292c30;
+  font: 10px 'DM Mono', monospace;
+  transform: rotate(7deg);
+}
+
+.night-date {
+  position: absolute;
+  top: 5%;
+  left: 6%;
+  color: #c9c6b6;
+  font-size: 8px;
+}
+
+.night-title {
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  margin: 0;
+  font: clamp(55px, 8vw, 90px)/.8 'Anton', sans-serif;
+  letter-spacing: 1px;
+  transform: rotate(-4deg);
+}
+
+.night-title span {
+  color: #e1c96d;
+  margin-left: 20%;
+}
+
+.night-photo {
+  top: 28%;
+  left: 10%;
+  width: 76%;
+  height: 31%;
+  padding: 6px;
+  background: #f1e9d9;
+  transform: rotate(3deg);
+}
+
+.night-caption {
+  position: absolute;
+  top: 62%;
+  left: 10%;
+  max-width: 78%;
+  color: #e1c96d;
+  font: 700 clamp(16px, 2.4vw, 24px) 'Caveat', cursive;
+  transform: rotate(-3deg);
+}
+
+.night-hand {
+  position: absolute;
+  top: 23%;
+  right: 9%;
+  color: #f1e9d9;
+  font: 700 22px 'Caveat', cursive;
+  transform: rotate(8deg);
+}
+
+.moon {
+  position: absolute;
+  top: 16%;
+  right: 9%;
+  color: #e1c96d;
+  font-size: 45px;
+}
+
+.starfield {
+  position: absolute;
+  top: 36%;
+  right: 4%;
+  color: #f1e9d9;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.night-scrap {
+  position: absolute;
+  left: 8%;
+  bottom: 9%;
+  width: 69%;
+  padding: 10px;
+  background: #e8e1d3;
+  color: #292c30;
+  transform: rotate(-3deg);
+}
+
+.night-quote {
+  margin: 6px 0;
+  font: 700 clamp(17px, 2vw, 22px) 'Caveat', cursive;
+}
+
+.night-scrap .tiny {
+  display: block;
+  font-size: 7px;
+}
+
+.night-red {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  color: #e6a18b;
+  font: 10px 'DM Mono', monospace;
+  transform: rotate(90deg) translateX(100%);
+  transform-origin: right bottom;
+}
+
+/* GYEONGBOKGUNG — OLD PAPER / EDITORIAL */
+
+.palace {
+  background-color: #e9dfca;
+  background-image:
+    radial-gradient(#c3b294 .8px, transparent .9px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 32px, #c9c8b2 33px, transparent 34px);
+  background-size: 6px 6px, auto;
+}
+
+.palace-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #a08b68;
+  font: 8px 'DM Mono', monospace;
+  letter-spacing: .5px;
+}
+
+.palace-title {
+  margin: 2vh 0 0;
+  color: #433d30;
+  font: 700 clamp(42px, 7vw, 72px)/1.1 'Nanum Myeongjo', serif;
+  letter-spacing: -4px;
+  transform: rotate(-2deg);
+}
+
+.palace-english {
+  margin: 0 0 2vh 5%;
+  color: #956347;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: 2px;
+  transform: rotate(1deg);
+}
+
+.palace-photo {
+  top: 23%;
+  left: 10%;
+  width: 76%;
+  height: 30%;
+  padding: 6px;
+  background: #f8f0dc;
+  transform: rotate(-3deg);
+}
+
+.palace-sticker {
+  position: absolute;
+  top: 45%;
+  right: 5%;
+  z-index: 4;
+  width: 83px;
+  height: 83px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #a64e38;
+  border-radius: 50%;
+  color: #a64e38;
+  font: 700 15px 'DM Mono', monospace;
+  text-align: center;
+  transform: rotate(12deg);
+}
+
+.palace-hand {
+  position: absolute;
+  top: 55%;
+  left: 8%;
+  color: #715c42;
+  font: 700 clamp(18px, 2.5vw, 25px) 'Caveat', cursive;
+  transform: rotate(-3deg);
+}
+
+.palace-strip {
+  position: absolute;
+  top: 66%;
+  left: 9%;
+  width: 82%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #d4c6a9;
+  color: #514633;
+  font: 12px 'Gowun Batang', serif;
+  transform: rotate(2deg);
+}
+
+.palace-strip span:nth-child(2) {
+  margin-left: 13%;
+}
+
+.palace-strip span:nth-child(3) {
+  margin-left: 4%;
+}
+
+.palace-margin {
+  position: absolute;
+  top: 85%;
+  right: 7%;
+  color: #a64e38;
+  font: 700 18px 'Caveat', cursive;
+  transform: rotate(-5deg);
+}
+
+.palace-sound {
+  position: absolute;
+  left: 7%;
+  bottom: 5%;
+  width: 48%;
+  padding: 7px;
+  background: #f2e8d4;
+  border: 1px solid #b5a17e;
+  transform: rotate(-2deg);
+}
+
+.palace-sound .tiny {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 7px;
+}
+
+.palace-end {
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
+  color: #776749;
+  font: 8px 'DM Mono', monospace;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  .cover {
+    min-height: 100svh;
+  }
+
+  .spread {
+    height: auto;
+    min-height: 100svh;
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+
+  .korean-page {
+    height: 100svh;
+    min-height: 680px;
+  }
+
+  .blank {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .cover-title {
+    font-size: clamp(58px, 15vw, 90px);
+  }
+
+  .next {
+    right: 22px;
+    bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+.sound-player,
+.audio-player,
+audio {
+  position: relative !important;
+  z-index: 9999 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+audio {
+  display: block !important;
+  width: 100% !important;
+  max-width: 320px;
+  min-width: 250px;
+  height: 54px !important;
+  margin: 16px 0;
+}
+
+/* Avoid clipping the audio controls */
+.sound-player,
+.audio-player {
+  overflow: visible !important;
+}
